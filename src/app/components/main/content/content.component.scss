@@ -1,0 +1,97 @@
+@import "../../../style/variables";
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  overflow: hidden;
+  background: url("../../../../assets/oval.png") right center no-repeat;
+  background-size: contain;
+
+  .search {
+    max-width: 70%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+
+    div {
+      display: flex;
+
+      i {
+        color: $gray;
+        margin-right: 20px;
+        font-size: 1.5em;
+      }
+
+      input {
+        min-height: 20px;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        caret-color: $light-gray;
+        -webkit-text-fill-color: $light-gray;
+        font-size: 1.5em;
+        overflow: hidden;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 10px;
+      border-bottom: 1px solid $gray;
+    }
+  }
+
+  .picture {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .left,
+    .center,
+    .right {
+      opacity: 0;
+      transform: translateY(100px);
+      transition: all 500ms;
+    }
+
+    .center,
+    .active-center {
+      display: flex;
+      flex-direction: column;
+      margin: 0 15px;
+
+      img:first-of-type {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .active-left,
+  .active-center,
+  .active-right  {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms;
+  }
+
+  .active-left {
+    transition: all 2s;
+  }
+
+  .active-right {
+    transition: all 1s;
+  }
+}

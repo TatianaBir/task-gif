@@ -1,0 +1,40 @@
+<main class="col-sm-12 col-md-5 offset-md-7">
+
+  <div class="search">
+
+    <div>
+      <i class="fa fa-search"></i>
+      <input type="text" appAutofocus (input)="watchInput($event)">
+    </div>
+    <span class="col-sm-7"></span>
+
+  </div>
+
+  <div class="picture col-sm-12">
+
+    <div class="col-4" [ngClass]="{'active-left' : addClass, 'left' : !addClass}">
+      <img class="img-responsive" src="assets/bubble.jpg" alt="bubble">
+    </div>
+
+    <div class="col-5" [ngClass]="{'active-center' : addClass, 'center' : !addClass}">
+
+      <img src="assets/pyramid.jpg" alt="pyramid" *ngIf="stateStatus;else other">
+      <img src="assets/pineapple.jpg" alt="pineapple" *ngIf="stateStatus">
+
+      <ng-template #other>
+        <img src="assets/nails.jpg" alt="nails">
+        <img src="assets/dog.jpg" alt="dog">
+      </ng-template>
+
+    </div>
+
+    <div class="col-3" [ngClass]="{'active-right' : addClass, 'right' : !addClass}">
+      <ng-template #happy>
+        <img src="assets/happy_guy.jpg" alt="happy guy">
+      </ng-template>
+      <img src="assets/abstraction.jpg" alt="abstraction" *ngIf="stateStatus;else happy">
+    </div>
+
+  </div>
+
+</main>
